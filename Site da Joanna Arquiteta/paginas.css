@@ -1,0 +1,624 @@
+/* =========================
+   TÍTULO DAS PÁGINAS INTERNAS (BLOG EVOLUÍDO)
+========================= */
+
+.titulo-interna {
+    padding: 120px 80px; /* removido padding duplicado */
+    background-color: #8fa99a;
+    position: relative;
+    overflow: hidden;
+}
+
+.titulo-interna .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo-interna h1 {
+    width: 50%;
+}
+
+.titulo-imagem {
+    width: 100%;
+    position: relative;
+
+}
+
+
+
+/* TÍTULO */
+
+.titulo-interna h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+}
+
+/* Linha decorativa */
+.titulo-interna h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #1a1a1a;
+    margin-top: 20px;
+}
+
+/* Variação de título para a página Projeto X */
+
+.titulo-projetox {
+    /* Fundo preto sólido para o título do Projeto X */
+    background-color: #000000;
+    background-image: none;
+}
+
+.titulo-projetox h1 {
+    color: #ffffff;
+}
+
+.titulo-projetox-projeto {
+    color: #ffffff;
+}
+
+.titulo-projetox-x {
+    color: #ff2a2a;
+}
+
+/* IMAGEM DIREITA */
+
+.titulo-imagem {
+    width: 40%;
+    position: relative;
+    z-index: 2;
+}
+
+.titulo-imagem img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    display: block;
+}
+
+/* GRADE DECORATIVA */
+
+.titulo-interna::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    width: 120px;
+    height: 120px;
+    background-image: linear-gradient(#000 1px, transparent 1px),
+                      linear-gradient(90deg, #000 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.12;
+}
+
+/* =========================
+   CONTEÚDO DE ARTIGO
+========================= */
+
+.conteudo-interno {
+    padding: 80px 20px;
+    background-color: #ECE5DF;
+}
+
+.conteudo-interno .container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.conteudo-interno .layout-duas-colunas {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.conteudo-interno .col-texto p,
+.conteudo-interno .col-texto li {
+    text-align: left;
+}
+
+.conteudo-interno .col-texto h2 {
+    font-size: 2.2rem;
+    margin-top: 0;
+}
+
+.conteudo-interno .bloco {
+    padding-bottom: 26px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10); /* linha divisória fina */
+}
+
+.conteudo-interno .bloco:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.conteudo-interno .col-imagens {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.conteudo-interno .imagem-card {
+    display: block;
+    border-radius: 10px; /* leve borda arredondada */
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08); /* sombra extremamente sutil */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.conteudo-interno .imagem-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
+}
+
+.conteudo-interno .imagem-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.conteudo-interno h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.conteudo-interno h2:first-of-type {
+    margin-top: 0;
+}
+
+.conteudo-interno p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: justify;
+}
+
+.conteudo-interno ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.conteudo-interno li {
+    margin-bottom: 10px;
+}
+
+/* Imagens em destaque dentro do conteúdo interno */
+
+.conteudo-interno .imagem-destaque {
+    margin: 40px auto;
+}
+
+.conteudo-interno .imagem-destaque img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    object-fit: contain;
+}
+
+.conteudo-interno .imagem-destaque figure {
+    margin: 0 0 1em 0;
+}
+
+.conteudo-interno .imagem-destaque figcaption {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 8px;
+    text-align: left;
+}
+
+/* =========================
+   ACCORDION — DÚVIDAS FREQUENTES
+========================= */
+
+.faq {
+    max-width: 850px;
+    margin: 60px auto 0;
+}
+
+.faq h2 {
+    margin-bottom: 10px;
+}
+
+.accordion {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: #f6f1eb;
+    margin-bottom: 14px; /* espaço entre uma caixinha e outra */
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    color: #1a1a1a;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.15s ease;
+}
+
+.accordion-button:hover {
+    background-color: #e5ddd5;
+}
+
+.accordion-button:focus-visible {
+    outline: 2px solid #8fa99a;
+    outline-offset: 2px;
+}
+
+.accordion-title {
+    flex: 1;
+    margin-right: 12px;
+}
+
+.accordion-icon {
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.accordion-item.ativo .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: #fbf7f2;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding-top 0.3s ease, padding-bottom 0.3s ease;
+}
+
+.accordion-item.ativo .accordion-content {
+    opacity: 1;
+    padding-top: 10px;
+    padding-bottom: 20px; /* mais respiro embaixo do texto */
+}
+
+.accordion-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+
+.conteudo-interno a {
+    color: #1a1a1a;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.conteudo-interno a:hover {
+    opacity: 0.7;
+}
+
+/* Citações */
+
+.conteudo-interno blockquote {
+    border-left: 3px solid #1a1a1a;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: #555;
+}
+
+/* =========================
+   GALERIA DE IMAGENS
+========================= */
+
+.galeria-interna {
+    padding: 80px 20px;
+    background-color: #f7f7f7;
+}
+
+.galeria-interna .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.galeria-interna a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.galeria-interna a h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.galeria-interna img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    display: block;
+}
+
+.galeria-interna img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+
+    
+}
+
+/* Lightbox (visualização em tela cheia das imagens) */
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 9999;
+}
+
+.lightbox-overlay.aberto {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+}
+
+/* Seção Plantas e planejados (Projeto X) */
+
+.secao-plantas-planejados {
+    padding: 0 20px 80px;
+    background-color: #f7f7f7;
+}
+
+.secao-plantas-planejados .titulo-secao-plantas {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.galeria-plantas-planejados .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.galeria-plantas-planejados .subtitulo-galeria {
+    grid-column: 1 / -1;
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    color: #1a1a1a;
+    margin: 24px 0 8px;
+}
+
+.galeria-plantas-planejados .subtitulo-galeria:first-of-type {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .secao-plantas-planejados {
+        padding: 0 16px 60px;
+    }
+
+    .secao-plantas-planejados .titulo-secao-plantas {
+        font-size: 1.75rem;
+    }
+
+    .galeria-plantas-planejados .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Card em destaque no blog (Projeto X) */
+
+.blog-card-destaque img {
+    /* mantém a mesma animação de hover das outras imagens,
+       apenas com uma sombra um pouco mais forte no estado normal */
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 900px) {
+    .galeria-interna .blog-card-destaque {
+        /* faz o card do Projeto X ocupar mais espaço na grade */
+        grid-column: span 2;
+    }
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+/* Tablet / mobile largo: 550px a 800px — imagens e conteúdo adaptados */
+@media (min-width: 550px) and (max-width: 800px) {
+    .titulo-interna {
+        padding: 90px 24px 56px;
+        text-align: center;
+    }
+
+    .titulo-interna h1 {
+        width: 100%;
+        font-size: 2.6rem;
+    }
+
+    .titulo-imagem {
+        width: 100%;
+        max-width: 420px;
+        margin: 24px auto 0;
+    }
+
+    .titulo-imagem img {
+        width: 100%;
+        max-width: 100%;
+        height: 260px;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    .conteudo-interno {
+        padding: 56px 24px;
+    }
+
+    .conteudo-interno .container {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+
+    .conteudo-interno .imagem-destaque {
+        margin: 32px 0;
+        padding: 0 4px;
+    }
+
+    .conteudo-interno .imagem-destaque img,
+    .conteudo-interno .imagem-destaque figure img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-width: 0;
+    }
+
+    .conteudo-interno .imagem-destaque figcaption {
+        font-size: 0.85rem;
+        margin-top: 6px;
+    }
+
+    .conteudo-interno h2 {
+        font-size: 1.75rem;
+        margin-top: 32px;
+    }
+
+    .conteudo-interno p {
+        font-size: 1rem;
+    }
+
+    .faq {
+        padding: 0 24px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .titulo-interna {
+        padding: 80px 20px 48px;
+        text-align: center;
+    }
+
+    .titulo-interna .container {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .titulo-interna h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 2.4rem;
+    }
+
+    .titulo-interna h1::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .titulo-imagem {
+        width: 100%;
+        max-width: 340px;
+        margin-top: 32px;
+    }
+
+    .titulo-imagem img {
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .conteudo-interno .layout-duas-colunas {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .conteudo-interno {
+        padding: 60px 16px;
+    }
+
+    .conteudo-interno p {
+        font-size: 1rem;
+    }
+
+    .conteudo-interno .col-imagens {
+        position: static;
+        top: auto;
+    }
+
+}
+
+.galeria-interna video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px; /* opcional, se suas imagens tiverem */
+}
+
+/* =========================
+   BANNER DO BLOG
+========================= */
+
+.titulo-interna:has(.banner-blog){
+    padding:0;
+    background:none;
+}
+
+.banner-blog{
+    width:100%;
+    height:auto;
+    display:block;
+    .banner-blog{
+        width:100%;
+        height:420px;
+        object-fit:cover;
+    }
+}
