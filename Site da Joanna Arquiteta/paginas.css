@@ -185,6 +185,20 @@
     margin-top: 0;
 }
 
+.conteudo-interno h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-top: 36px;
+    margin-bottom: 14px;
+    color: #1a1a1a;
+    line-height: 1.35;
+}
+
+.conteudo-interno h3:first-of-type {
+    margin-top: 28px;
+}
+
 .conteudo-interno p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.05rem;
@@ -378,6 +392,24 @@
     
 }
 
+/* Praça do Catumbi: usa a grade global .galeria-interna; miniaturas com a mesma proporção */
+.galeria-praca-catumbi .container > img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    height: auto;
+}
+
+/* Mobile: alinha padding/gap das galerias internas (como seções similares do site) */
+@media (max-width: 768px) {
+    .galeria-interna {
+        padding: 60px 16px;
+    }
+
+    .galeria-interna .container {
+        gap: 20px;
+    }
+}
+
 /* Lightbox (visualização em tela cheia das imagens) */
 
 .lightbox-overlay {
@@ -498,6 +530,14 @@
         margin: 0 auto;
     }
 
+    .titulo-interna:has(.banner-blog) {
+        padding: 0;
+    }
+
+    .banner-blog {
+        height: 320px;
+    }
+
     .conteudo-interno {
         padding: 56px 24px;
     }
@@ -528,6 +568,11 @@
     .conteudo-interno h2 {
         font-size: 1.75rem;
         margin-top: 32px;
+    }
+
+    .conteudo-interno h3 {
+        font-size: 1.2rem;
+        margin-top: 28px;
     }
 
     .conteudo-interno p {
@@ -562,6 +607,17 @@
     .titulo-interna h1::after {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .titulo-interna:has(.banner-blog) {
+        padding: 0;
+    }
+
+    .banner-blog {
+        height: min(220px, 42vh);
+        min-height: 168px;
+        /* Mobile: a imagem do banner fica mais centralizada para não cortar as letras */
+        object-position: 62% center;
     }
 
     .titulo-imagem {
@@ -604,21 +660,40 @@
 }
 
 /* =========================
-   BANNER DO BLOG
+   BANNER NO CABEÇALHO (Blog, Projetos urbanos, etc.)
 ========================= */
 
-.titulo-interna:has(.banner-blog){
-    padding:0;
-    background:none;
+.titulo-interna:has(.banner-blog) {
+    padding: 0;
+    background: none;
+    overflow: hidden;
 }
 
-.banner-blog{
-    width:100%;
-    height:auto;
-    display:block;
-    .banner-blog{
-        width:100%;
-        height:420px;
-        object-fit:cover;
-    }
+.titulo-interna:has(.banner-blog)::after {
+    display: none;
+}
+
+.banner-blog {
+    width: 100%;
+    height: 420px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================
+   PROJETOS URBANÍSTICOS
+========================= */
+
+.secao-projetos-urbanos {
+    padding: 80px 20px;
+    background-color: #f7f7f7;
+}
+
+.secao-projetos-urbanos .titulo-secao-projetos-urbanos {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    text-align: center;
 }

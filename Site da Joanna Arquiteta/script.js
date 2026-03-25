@@ -67,6 +67,82 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==============================================
+       HOME — SLIDER DOS DESTAQUES (Projeto X / Urbanos)
+       ----------------------------------------------
+       Transição horizontal com setas, bolinhas e autoplay.
+       ============================================== */
+
+    const destaqueSlider = document.querySelector('.destaque-projetos-slider');
+
+    if (destaqueSlider) {
+        const track = destaqueSlider.querySelector('.destaque-projetos-slider-track');
+        const slides = destaqueSlider.querySelectorAll('.destaque-projeto-slide');
+        const prevButton = destaqueSlider.querySelector('.destaque-slider-seta-prev');
+        const nextButton = destaqueSlider.querySelector('.destaque-slider-seta-next');
+        const dots = destaqueSlider.querySelectorAll('.destaque-slider-dot');
+
+        let currentIndex = 0;
+        let autoPlayId = null;
+
+        const SLIDER_GAP = 28;
+
+        const updateSlider = (index) => {
+            if (!track || !slides.length) return;
+            currentIndex = (index + slides.length) % slides.length;
+            const slideWidth = slides[0].offsetWidth;
+            const offset = currentIndex * (slideWidth + SLIDER_GAP);
+            track.style.transform = `translateX(-${offset}px)`;
+
+            dots.forEach((dot, dotIndex) => {
+                dot.classList.toggle('ativo', dotIndex === currentIndex);
+            });
+        };
+
+        const nextSlide = () => updateSlider(currentIndex + 1);
+        const prevSlide = () => updateSlider(currentIndex - 1);
+
+        const stopAutoPlay = () => {
+            if (autoPlayId) {
+                window.clearInterval(autoPlayId);
+                autoPlayId = null;
+            }
+        };
+
+        const startAutoPlay = () => {
+            stopAutoPlay();
+            autoPlayId = window.setInterval(nextSlide, 5200);
+        };
+
+        if (nextButton) nextButton.addEventListener('click', () => {
+            nextSlide();
+            startAutoPlay();
+        });
+
+        if (prevButton) prevButton.addEventListener('click', () => {
+            prevSlide();
+            startAutoPlay();
+        });
+
+        dots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const targetIndex = Number(dot.dataset.slideIndex);
+                if (!Number.isNaN(targetIndex)) {
+                    updateSlider(targetIndex);
+                    startAutoPlay();
+                }
+            });
+        });
+
+        destaqueSlider.addEventListener('mouseenter', stopAutoPlay);
+        destaqueSlider.addEventListener('mouseleave', startAutoPlay);
+
+        window.addEventListener('resize', () => updateSlider(currentIndex));
+
+        updateSlider(0);
+        startAutoPlay();
+    }
+
+    /* ==============================================
        2. BOTÃO "SOLICITAR ORÇAMENTO" → WHATSAPP
        ----------------------------------------------
        Ação controlada por JS (mais segurança)
