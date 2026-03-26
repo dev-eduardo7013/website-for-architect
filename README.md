@@ -3,13 +3,11 @@
 
 ## 🖼️ Preview do Projeto
 <p align="center">
-  <img src="prints-do-site/618shots_so.png" width="48%">
-  <img src="prints-do-site/912shots_so.png" width="48%">
+  <img src="./prints-do-site/618shots_so.png" alt="Preview da página inicial do site" width="48%">
+  <img src="./prints-do-site/912shots_so.png" alt="Preview de seção interna do site" width="48%">
 </p>
 
 ---
-
-
 ## 🧠 Sobre o Projeto
 
 Este projeto representa meu primeiro desenvolvimento real do segmento de arquitetura. A proposta consistiu na criação de um website institucional com foco em performance visual, organização estrutural e apresentação estratégica de conteúdo.
